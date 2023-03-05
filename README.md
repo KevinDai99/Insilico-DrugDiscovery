@@ -15,6 +15,19 @@ In this project, I will developing a model for predicting whether a molecule is 
 
 3) Developing a machine learning model to evaluate drug candidates
 
+## Exploring Data Results
 
+In the data exploration and cleaning step - bioactiviy class was assigned - and statistical test were done to confirm that active vs in-active compounds can be used for ML. 
 
+![image](https://user-images.githubusercontent.com/89043234/222947169-a5f586ac-50cc-4789-be34-5d079bf292bb.png)
 
+|   | Descriptor    | results   | pvalue        | interpretation                     |
+|---|---------------|-----------|---------------|------------------------------------|
+| 0 | pIC50         | 33.402186 | 1.937665e-152 | Different distribution (reject H0) |
+| 1 | MW            | 7.251568  | 9.960885e-13  | Different distribution (reject H0) |
+| 2 | LogP          | 3.647737  | 2.821961e-04  | Different distribution (reject H0) |
+| 3 | NumHDonors    | 3.379502  | 7.623462e-04  | Different distribution (reject H0) |
+| 4 | NumHAcceptors | 5.194867  | 2.618861e-07  | Different distribution (reject H0) |
+
+The Lipinski descriptors as seen above, is a rule of thumb for the druglikeness of a compound. 
+Statistical Signficance present for all Lipinski Values. This is expected from active vs inactive compounds 

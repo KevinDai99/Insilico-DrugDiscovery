@@ -39,8 +39,19 @@ Statistical Signficance present for all Lipinski Values. This is expected from a
 
 ![image](https://user-images.githubusercontent.com/89043234/223281694-e144b2ca-f976-4ced-8c08-a594baf61038.png)
 
-
-
 ## Results 
 
+### Mutiple Linear Regression 
+
+![image](https://user-images.githubusercontent.com/89043234/223282259-7dd24ca6-0414-431e-9b1b-289bab457d40.png)
+
+After training and testing, mutiple linear regression model did not predict actual pIC50 well, with an r2 score of 0.26. This is expected as even after PCA analysis, there is over 100 features, and suggest that a non-linear model will perform better. 
+
+### Random Forest Tree - Ensemble Learning 
+
+![image](https://user-images.githubusercontent.com/89043234/223282328-b889e6ea-7f01-4493-81d8-cb4e46187c99.png)
+
+The random forest tree algorithim predicted actual pIC50 better than mutiple linear regression with a r2 score of 0.41 after hyper-optimization. The MSE was 0.83 compared to the 0.14 MSE when predicting on x_train. This suggest that the model is not overfitted and is able to generalize to unseen data. 
+
+However, the r2 score of 0.41 may be improved by using other models such neural networks or collecting more data. 
 

@@ -31,3 +31,16 @@ In the data exploration and cleaning step - bioactiviy class was assigned - and 
 
 The Lipinski descriptors as seen above, is a rule of thumb for the druglikeness of a compound. 
 Statistical Signficance present for all Lipinski Values. This is expected from active vs inactive compounds 
+
+## Methodology
+
+1) Padel was used calculate the molecular fingerprints from the SMILES
+2) PCA analysis was used to reduce the number of features as seen below - with a cutoff at 95% cumulative variance. 
+
+![image](https://user-images.githubusercontent.com/89043234/223281694-e144b2ca-f976-4ced-8c08-a594baf61038.png)
+
+
+
+## Results 
+
+

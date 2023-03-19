@@ -77,8 +77,6 @@ Based on Figure 4 Neural Network with three layesr performs better than random f
 
 **Figure 5. An Alpha value of 2.00 reduces overfitting relative to other values**
 
-Figure 5. illustrates that an alpha value of 2.00 has the lowest the difference between R^2 on test and train of 0.54, and 0.83 respectively. 
-
 ![image](https://user-images.githubusercontent.com/89043234/226152002-3d95330c-7c9b-47ba-ba9e-faa9d2b9e467.png)
 
 **Figure 6. Neural Network Model after Regularizations**

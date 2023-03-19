@@ -29,6 +29,8 @@ In the data exploration and cleaning step - bioactiviy class was assigned - and 
 | 3 | NumHDonors    | 3.379502  | 7.623462e-04  | Different distribution (reject H0) |
 | 4 | NumHAcceptors | 5.194867  | 2.618861e-07  | Different distribution (reject H0) |
 
+**Figure 1.  Limpinski descriptor shows significant difference between active and inactive compounds**
+
 The Lipinski descriptors as seen above, is a rule of thumb for the druglikeness of a compound. 
 Statistical Signficance present for all Lipinski Values. This is expected from active vs inactive compounds 
 
@@ -45,13 +47,41 @@ Statistical Signficance present for all Lipinski Values. This is expected from a
 
 ![image](https://user-images.githubusercontent.com/89043234/223282259-7dd24ca6-0414-431e-9b1b-289bab457d40.png)
 
-After training and testing, mutiple linear regression model did not predict actual pIC50 well, with an r2 score of 0.26. This is expected as even after PCA analysis, there is over 100 features, and suggest that a non-linear model will perform better. 
+**Figure 2. Mutiple Linear Regression Model**
+
+After training and testing, mutiple linear regression model did not predict actual pIC50 well, with an r2 score of 0.26. This is expected as the relationship between molecular fingerprints and pIC50 is non-linear. 
 
 ### Random Forest Tree - Ensemble Learning 
 
 ![image](https://user-images.githubusercontent.com/89043234/223282328-b889e6ea-7f01-4493-81d8-cb4e46187c99.png)
 
+**Figure 3. Random Forest Tree Model**
+
 The random forest tree algorithim predicted actual pIC50 better than mutiple linear regression with a r2 score of 0.41 after hyper-optimization. The MSE was 0.83 compared to the 0.14 MSE when predicting on x_train. This suggest that the model is not overfitted and is able to generalize to unseen data. 
 
 However, the r2 score of 0.41 may be improved by using other models such neural networks or collecting more data. 
+
+## Neural Network (MPL Regressor)
+
+| Neural Network | Predicted R^2 Value on Test | Predicted R^2 Value on Train |
+|----------------|-----------------------------|------------------------------|
+| One Layer      | 0.35                        | 0.72                         |
+| Two Layer      | 0.41                        | 0.81                         |
+| Three Layer    | 0.55                        | 0.86                         |
+
+**Figure 4. A Neural Network with three layers performs better than linear regression and random forest, but is overfitted**
+
+Based on (Figure 4.) Neural Network with three layesr performs better than random forest tree and linear regression. However, the difference between predicted R^2 on test and train suggest that the neural network model is not able to generalize to new data, and warrants L2 regularization.
+
+![image](https://user-images.githubusercontent.com/89043234/226152060-2a430c6d-b8e6-439a-8443-fc9d09e4684c.png)
+
+**Figure 5. An Alpha value of 2.00 reduces overfitting relative to other values**
+
+Figure 5. illustrates that an alpha value of 2.00 has the lowest the difference between R^2 on test and train of 0.54, and 0.83 respectively. 
+
+![image](https://user-images.githubusercontent.com/89043234/226152002-3d95330c-7c9b-47ba-ba9e-faa9d2b9e467.png)
+
+**Figure 6. Neural Network Model after Regularizations**
+
+
 

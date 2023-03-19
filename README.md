@@ -71,7 +71,7 @@ However, the r2 score of 0.41 may be improved by using other models such neural 
 
 **Figure 4. A Neural Network with three layers performs better than linear regression and random forest, but is overfitted**
 
-Based on (Figure 4.) Neural Network with three layesr performs better than random forest tree and linear regression. However, the difference between predicted R^2 on test and train suggest that the neural network model is not able to generalize to new data, and warrants L2 regularization.
+Based on Figure 4 Neural Network with three layesr performs better than random forest tree and linear regression. However, the difference between predicted R^2 on test and train suggest that the neural network model is not able to generalize to new data, and warrants L2 regularization.
 
 ![image](https://user-images.githubusercontent.com/89043234/226152060-2a430c6d-b8e6-439a-8443-fc9d09e4684c.png)
 
@@ -82,6 +82,10 @@ Figure 5. illustrates that an alpha value of 2.00 has the lowest the difference 
 ![image](https://user-images.githubusercontent.com/89043234/226152002-3d95330c-7c9b-47ba-ba9e-faa9d2b9e467.png)
 
 **Figure 6. Neural Network Model after Regularizations**
+
+## Conclusion
+
+In conclusion, out of the three models tested, the random forest tree algorithim may perform the best on novel data, as even after regularization, the neural network is likely overfitted. The random forest tree is also able to explain how it reached it prediction, whereas the neural network is a black-box model. Methods to increase the accuracy of the random forest model should be pursued, whether that be gaining more data, or certain molecular fingerprints be left out. 
 
 
 
